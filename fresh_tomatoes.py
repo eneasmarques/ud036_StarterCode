@@ -61,7 +61,7 @@ main_page_content = '''
 # A single movie entry html template
 movie_tile_content = '''
 <div class="movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
-	<img src="{poster_image_url}"">
+	<img src="{poster_image_url}" alt="{movie_title}">
 </div>
 '''
 
