@@ -14,7 +14,7 @@ Python 2.7.15
 
 [GitHub.com](https://github.com/eneasmarques/ud036_StarterCode) - (branch master) - executar arquivo entertainment_center.py
 
-[GitHub.io](https://github.com/eneasmarques/ud036_StarterCode/fresh_tomatoes.html)
+[GitHub.io](https://eneasmarques.github.io/ud036_StarterCode/fresh_tomatoes.html)
 
 ## Instruções
 
