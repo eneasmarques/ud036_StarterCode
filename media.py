@@ -1,6 +1,6 @@
 class Movie():
     """ Classe com informacoes dos filmes """
-    
+
     def __init__(self, movie_title, poster_image_url,
                  trailer_youtube_url):
         self.title = movie_title

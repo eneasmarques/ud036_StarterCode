@@ -24,8 +24,7 @@ main_page_head = '''
     <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway+Dots" rel="stylesheet">
 </head>
-'''
-
+'''  # noqa
 
 # The main page layout and title bar
 main_page_content = '''
@@ -55,15 +54,15 @@ main_page_content = '''
   </body>
   <script src="js/main.js"></script>
 </html>
-'''
+'''  # noqa
 
 
 # A single movie entry html template
 movie_tile_content = '''
 <div class="movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
-	<img src="{poster_image_url}" alt="{movie_title}">
+    <img src="{poster_image_url}" alt="{movie_title}">
 </div>
-'''
+'''  # noqa
 
 
 def create_movie_tiles_content(movies):
