@@ -1,34 +1,74 @@
-body {
-    padding-top: 80px;
-}
-#trailer .modal-dialog {
+* {
+    box-sizing: border-box;
+  }
+  html, body {
+    height: 100vh;
+  }
+  body {
+    display: flex;
+    background: #ffd89b;
+  }
+  main {
+    display: flex;
+    overflow-x: auto;
+    width: 100% !important;
+    max-height: 95vh;
+  }
+  .container {
+    max-height: 100%;
+    align-self: center;
+  }
+  .navbar {
+    width: 10%;
+    margin: 0;
+  }
+  a:hover {
+    text-decoration: none !important;
+  }
+  .nav-title {
+    font-family: "Raleway Dots", cursive;
+    font-size: 10rem;
+    color: #19547b;
+  }
+  #trailer .modal-dialog {
     margin-top: 200px;
-    width: 640px;
-    height: 480px;
-}
-.hanging-close {
+    max-width: 640px;
+    max-height: 480px;
+    min-width: 320px;
+    min-height: 240px;
+  }
+  .hanging-close {
     position: absolute;
     top: -12px;
     right: -12px;
     z-index: 9001;
-}
-#trailer-video {
+  }
+  #trailer-video {
     width: 100%;
     height: 100%;
-}
-.movie-tile {
-    margin-bottom: 20px;
-    padding-top: 20px;
-}
-.movie-tile:hover {
-    background-color: #EEE;
-    cursor: pointer;
-}
-.scale-media {
+  }
+  .movie-tile {
+    width: 100%;
+    margin: 10px 0 10px 10px;
+  }
+  .movie-tile img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .movie-tile h2 {
+    background-color: white;
+    color: black;
+    font-size: 3rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto 10px;
+    width: 100%;
+  }
+  .scale-media {
     padding-bottom: 56.25%;
     position: relative;
-}
-.scale-media iframe {
+  }
+  .scale-media iframe {
     border: none;
     height: 100%;
     position: absolute;
@@ -36,4 +76,41 @@ body {
     left: 0;
     top: 0;
     background-color: white;
-}
+  }
+  
+  @media only screen and (max-width: 1024px) {
+    .nav-title {
+      font-size: 8rem;
+    }
+  }
+  
+  @media only screen and (max-width: 992px) {
+    .nav-title {
+      font-size: 5rem;
+    }
+    .movie-tile img {
+      height: calc(100% - 100px);
+    }
+    body {
+      display: block;
+    }
+    .navbar {
+      text-align: center;
+      height: auto;
+      width: 100%;
+      margin: 0;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .movie-tile img {
+      height: calc(100% - 144px);
+    }
+  }
+  
+  @media only screen and (max-width: 412px) {
+    .movie-tile img {
+      height: calc(100% - 200px);
+    }
+  }
+  

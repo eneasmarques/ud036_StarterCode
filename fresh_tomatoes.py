@@ -10,15 +10,19 @@ main_page_head = '''
 <head>
     <meta charset="utf-8">
     <title>Fresh Tomatoes!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Bootstrap 3 -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
     <!-- Style -->
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway+Dots" rel="stylesheet">
 </head>
 '''
 
@@ -41,17 +45,13 @@ main_page_content = '''
 
     <!-- Main Page Content -->
     <div class="container">
-      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
-          </div>
-        </div>
+      <div class="nav navbar" role="navigation">
+        <a class="nav-title" href="#">Fresh Tomatoes Movie Trailers</a>
       </div>
     </div>
-    <div class="container">
+    <main class="container">
       {movie_tiles}
-    </div>
+    </main>
   </body>
   <script src="js/main.js"></script>
 </html>
@@ -60,9 +60,8 @@ main_page_content = '''
 
 # A single movie entry html template
 movie_tile_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
-    <img src="{poster_image_url}" width="220" height="342">
-    <h2>{movie_title}</h2>
+<div class="movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
+	<img src="{poster_image_url}"">
 </div>
 '''
 
@@ -76,9 +75,12 @@ def create_movie_tiles_content(movies):
             r'(?<=v=)[^&#]+', movie.trailer_youtube_url)
         youtube_id_match = youtube_id_match or re.search(
             r'(?<=be/)[^&#]+', movie.trailer_youtube_url)
-        trailer_youtube_id = (youtube_id_match.group(0) if youtube_id_match
-                              else None)
 
+        str(movie.trailer_youtube_url)
+        trailer_youtube_id = (youtube_id_match.group(0) if youtube_id_match
+                              else movie.trailer_youtube_url)
+
+        # trailer_youtube_id = movie['trailer_youtube_url']
         # Append the tile for the movie with its content filled in
         content += movie_tile_content.format(
             movie_title=movie.title,
